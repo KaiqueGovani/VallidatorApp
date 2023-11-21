@@ -1,0 +1,219 @@
+###
+GET http://localhost:3000/usuarios/listar
+###
+GET http://localhost:3000/db/setup
+
+###
+POST http://localhost:3000/usuarios/login
+Content-Type: application/json
+
+{
+    "email": "kaique.govani@hotmail.com",
+    "senha": "senha_segura"
+}
+###
+POST http://localhost:3000/usuarios/login
+Content-Type: application/json
+
+{
+    "email": "ricardo.milos@gmail.com",
+    "senha": "senha_segura"
+}
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Kaique",
+    "sobrenome": "Medeiros Govani",
+    "telefone": "+55 15 998492994",
+    "email": "kaique.govani@hotmail.com",
+    "senha": "senha_segura",
+    "permissao": "admin"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Ricardo",
+    "sobrenome": "Milos",
+    "telefone": "+55 51 997478274",
+    "email": "ricardo.milos@gmail.com",
+    "senha": "senha_segura",
+    "permissao": "criar"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Caetano",
+    "sobrenome": "Passos",
+    "telefone": "+55 11 888334674",
+    "email": "caetano.passos@hotmail.com",
+    "senha": "senha_segura",
+    "permissao": "upload"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Kaua",
+    "sobrenome": "Tezoto",
+    "telefone": "+55 15 998456723",
+    "email": "kaua.tezoto@hotmail.com",
+    "senha": "senha_segura",
+    "permissao": "upload:criar"
+}
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Mateus",
+    "sobrenome": "Nauhan",
+    "telefone": "+55 15 940028922",
+    "email": "nauhan.cs2@hotmail.com",
+    "senha": "euamojava",
+    "permissao": "admin"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Ana",
+    "sobrenome": "Silveira",
+    "telefone": "+55 21 923443456",
+    "email": "ana.silveira@mail.com",
+    "senha": "senha_segura",
+    "permissao": "ver"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Bruno",
+    "sobrenome": "Gomes",
+    "telefone": "+55 31 955556789",
+    "email": "bruno.gomes@mail.com",
+    "senha": "senha_segura",
+    "permissao": "criar"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Carla",
+    "sobrenome": "Dias",
+    "telefone": "+55 11 974421231",
+    "email": "carla.dias@mail.com",
+    "senha": "senha_segura",
+    "permissao": "upload"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Diego",
+    "sobrenome": "Lopez",
+    "telefone": "+55 21 912345678",
+    "email": "diego.lopez@mail.com",
+    "senha": "senha_segura",
+    "permissao": "admin"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Eduarda",
+    "sobrenome": "Fernandes",
+    "telefone": "+55 85 993332211",
+    "email": "eduarda.fernandes@mail.com",
+    "senha": "senha_segura",
+    "permissao": "ver"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Fernando",
+    "sobrenome": "Alves",
+    "telefone": "+55 41 967891234",
+    "email": "fernando.alves@mail.com",
+    "senha": "senha_segura",
+    "permissao": "criar"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Giovanna",
+    "sobrenome": "Barros",
+    "telefone": "+55 51 981172345",
+    "email": "giovanna.barros@mail.com",
+    "senha": "senha_segura",
+    "permissao": "upload"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Hector",
+    "sobrenome": "Santos",
+    "telefone": "+55 19 932211345",
+    "email": "hector.santos@mail.com",
+    "senha": "senha_segura",
+    "permissao": "ver"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "Íris",
+    "sobrenome": "Machado",
+    "telefone": "+55 81 900223344",
+    "email": "iris.machado@mail.com",
+    "senha": "senha_segura",
+    "permissao": "admin"
+}
+
+###
+POST http://localhost:3000/usuarios/criar
+Content-Type: application/json
+
+{
+    "nome": "João",
+    "sobrenome": "Pereira",
+    "telefone": "+55 13 996754321",
+    "email": "joao.pereira@mail.com",
+    "senha": "senha_segura",
+    "permissao": "criar"
+}
+
+
+###
+DELETE http://localhost:3000/usuarios/deletar-todos
+

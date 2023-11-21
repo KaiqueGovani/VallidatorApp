@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Koulen|Inter|Inter:600|Ubuntu|Ubuntu:700|Noto+Sans+Thai:500|Noto+Sans+Thai:400|Open+Sans:600">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles/variaveis.css">
+    <link rel="stylesheet" href="../styles/usuario.css">
+    <script src="../scripts/templates-common.js"></script>
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/feedback.js"></script>
+
+    <title>Templates Ativos</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body mb-4">
+        <div class="container-fluid">
+            <div class="vallidator-logo d-flex">
+                <a href="./dashboard"><img style="width: 62px;" src="../icons/VallidatorLogo3.png" /></a>
+                <a class="navbar-brand vallidator align-bottom" style="font-size: 56px; line-height: 42px; padding: 0;"
+                    href="./templates">VALLIDATOR</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="./templates">Templates</a>
+                    <a class="nav-link" href="./minha-conta">Minha Conta</a>
+                    <a class="nav-link" href="./login" id="btnSair">Sair</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-content container">
+        <div class="page-title mb-4">
+            Templates Ativos
+        </div>
+
+        <div class="page-body mx-5">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="container">
+                        <div class="row gx-3 gy-1 align-items-center justify-content-between">
+                            <div class="col-md-3 col-12 p-0">
+                                Todos os Templates
+                            </div>
+                            <div class="col-md-6 col-12 ms-auto d-flex justify-content-between align-items-center">
+                                <div class="input-group" style="height: fit-content;">
+                                    <input type="text" class="form-control" id="filtro" name="filtro"
+                                        placeholder="Filtrar Templates..." required onkeypress="if (event.key === 'Enter' || event.keyCode === 13) filtrarTemplates()">
+                                    <select class="form-control form-select" name="filterOp" id="filterOp" style="max-width: 120px;">
+                                        <option value="nome" selected>Nome</option>
+                                        <option value="id">ID</option>
+                                        <option value="criador">Criador</option>
+                                        <option value="extensao">Extensão</option>
+                                    </select>
+                                    <span id="icone-filtro" onclick="filtrarTemplates();" class="input-group-text"
+                                        style="cursor: pointer;">
+                                        <i class="fa-solid fa-search"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="adicionarTemplateBtn" class="col-md-3 col-12 col-3 ms-auto p-0 text-end">
+                                <a href="#" class="btn btn-primary card-header-btn" data-bs-toggle="modal"
+                                    data-bs-target="#templateModal" onclick="resetarForm();">Adicionar
+                                    Novo
+                                    Template</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cb-templates">
+                    <!-- ? Atualizado Dinamicamente -->
+                </div>
+
+                <div class="card-footer d-flex align-content-center justify-content-between">
+                    <div class="card-text text-start opacity-50" id="footerText">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Criação de novo template -->
+    <div class="modal fade" id="templateModal" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Adicionar um Template</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mx-5">
+                    <form enctype="multipart/form-data" id="templateUploadForm">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="inputNomeTemplate" class="form-label">Nome do Template:*</label>
+                                    <input type="text" class="form-control" id="inputNomeTemplate"
+                                        placeholder="Escreva o nome do template" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="inputNCampos" class="form-label">Número de Campos no Arquivo:*</label>
+                                    <select oninput="atualizarInputs(parseInt(value));" type="dropdown"
+                                        class="form-control form-select" id="inputNCampos"
+                                        placeholder="Escolha o número de campos" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="csv" class="form-label">Tipo do arquivo:*</label>
+                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="btnradio">
+                                        <input type="radio" class="btn-check" name="btnradio" id="csv"
+                                            autocomplete="off" checked>
+                                        <label class="btn btn-outline-primary" for="csv">
+                                            <img src="../icons/csv-icon.png" alt="">
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="btnradio" id="xls"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="xls">
+                                            <img src="../icons/xls-icon.png" alt="">
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="btnradio" id="xlsx"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="xlsx">
+                                            <img src="../icons/xlsx-icon.png" alt="">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="areaInputsCampos">
+                                <div class="col-md-6 mb-3">
+                                    <label for="inputNomeCampo1" class="form-label">Nome do Campo # 1:*</label>
+                                    <input type="text" class="form-control" id="inputNomeCampo1">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="inputTipoCampo1" class="form-label">Tipo do Campo # 1:*</label>
+                                    <select type="text" class="form-control form-select" id="inputTipoCampo1" required>
+                                        <!-- ? Atualizado Dinamicamente -->
+                                    </select>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                    <div class="d-flex flex-column align-items-center gap-1">
+                                        <div>
+                                            <label class="form-check-label" for="inputAnulavelCampo1">
+                                                Anulável 
+                                            </label>
+                                            <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-html="true"
+                                            data-bs-title="Define se podem haver registros <b>nulos/vazios</b> nessa coluna"></i>
+                                            <br>
+                                        </div>
+                                        <div class="mt-2">
+                                            <input class="mx-2 form-check-input" type="checkbox" value="" id="inputAnulavelCampo1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer align-content-center">
+                            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button data-bs-dismiss="modal" onclick='enviarTemplate();' type="button"
+                                class="btn btn-primary" id="sendTemplate">Enviar para Verificação!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estrutura do Modal de arquivo -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload de Arquivo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mx-5">
+                    <form enctype="multipart/form-data" id="fileUploadForm">
+                        <div class="mb-3">
+                            <label for="templateFile" class="form-label">Selecione um arquivo:</label>
+                            <input type="file" class="form-control" id="templateFile" name="templateFile">
+                        </div>
+                        <div class="row gy-3">
+                            <div class="col-6">
+                                <label for="caminhoEnvio" class="form-label">Escolha o caminho para salvar o
+                                    arquivo:</label>
+                                <select class="form-select" name="caminho" id="caminhoEnvio">
+                                    <!-- ? Atualizado Dinamicamente -->
+                                </select>
+                                <input type="text" id="inputNovoCaminho" class="d-none form-control"
+                                    placeholder="Enter para confirmar">
+                            </div>
+                            <div class="col-6 d-flex justify-content-end">
+                                <div class="form-check d-flex align-items-center gap-1 mt-4 p-3">
+                                    <input class="form-check-input mt-0" type="checkbox" value="false" id="depth"
+                                        name="depth">
+                                    <label class="form-check-label" for="depth">
+                                        Validação profunda
+                                    </label>
+                                    <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-html="true"
+                                        data-bs-title="Validação profunda procura por valores incorretos em cada linha e coluna da tabela. <b>Pode demorar mais tempo!</b>"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer align-content-center" style="justify-content: space-between;">
+                    <p id="templateUsado" class="opacity-50">Utilizando o template: #1 Clientes - CSV</p>
+                    <div>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            id="uploadButton">Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Feedback -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="feedbackModalLabel">Titulo do Feedback</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column text-center align-items-center pb-5">
+                    <div id="feedbackModalIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="106" height="106" viewBox="0 0 106 106"
+                            fill="none">
+                            <path
+                                d="M39.75 53L48.5833 61.8333L66.25 44.1666M34.6034 20.7453C37.7725 20.4924 40.7811 19.2462 43.2008 17.1841C48.8475 12.3721 57.1525 12.3721 62.7992 17.1841C65.2189 19.2462 68.2275 20.4924 71.3966 20.7453C78.792 21.3354 84.6646 27.208 85.2547 34.6034C85.5076 37.7725 86.7538 40.7811 88.8159 43.2008C93.6279 48.8474 93.6279 57.1525 88.8159 62.7991C86.7538 65.2189 85.5076 68.2274 85.2547 71.3965C84.6645 78.792 78.792 84.6645 71.3966 85.2547C68.2275 85.5076 65.2189 86.7538 62.7992 88.8158C57.1525 93.6279 48.8475 93.6279 43.2008 88.8158C40.7811 86.7538 37.7725 85.5076 34.6034 85.2547C27.208 84.6645 21.3354 78.792 20.7453 71.3965C20.4924 68.2274 19.2462 65.2189 17.1841 62.7991C12.3721 57.1525 12.3721 48.8474 17.1841 43.2008C19.2462 40.7811 20.4924 37.7725 20.7453 34.6034C21.3354 27.208 27.208 21.3354 34.6034 20.7453Z"
+                                stroke="#36965E" stroke-width="8.83333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="color-AtivoVerde ff-ubuntu-700 pb-2" id="feedbackModalResponse">Resposta do Feedback
+                    </div>
+                    <div class="opacity-75" id="feedbackModalP">Informações Adicionais</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Feedback -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="feedbackToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <div id="feedbackToastIcon" class="me-2"></div>
+                <strong id="feedbackToastTitle" class="me-auto">Bootstrap</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+
+    <script src="../scripts/templates.js"></script>
+
+</body>
+
+</html>

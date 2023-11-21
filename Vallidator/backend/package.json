@@ -1,0 +1,32 @@
+{
+  "name": "vallidator",
+  "version": "1.0.0",
+  "description": "Aplicação Node.js com Express e PostgreSQL",
+  "scripts": {
+    "start": "nodemon --ignore cypress/ -L server.js",
+    "e2e": "cypress open",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "form-data": "^4.0.0",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.7",
+    "npm": "^10.1.0",
+    "pg": "^8.7.1",
+    "start": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "cypress": "^13.5.1",
+    "esm": "^3.2.25",
+    "nodemon": "^3.0.1"
+  },
+  "type": "module"
+}
