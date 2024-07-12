@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+
+  # Servidor Node.js
+  nodejs:
+    container_name: vallidator-app
+    image: node:18-alpine
+    volumes:
+      - ./Vallidator:/app #
+      - ./config:/config
+    ports:
+      - "3000:3000" # Mapeia a porta do contêiner para a porta local
+    working_dir: /app/backend
+    command: sh -c "npm install && npm start" # Comando para iniciar servidor Node.js
+    depends_on:
+      - postgres
+      - pgadmin
+      - flask
+
+  # Serviço Python (Flask)
+  flask:
+    build: ./python
+    container_name: vallidator-flask
+    environment:
+      FLASK_APP: app.py
+    volumes:
+      - ./python/src:/app
+      - ./config:/config
+    ports:
+      - "5000:5000"
+
+  # Banco de Dados PostgreSQL
+  postgres:
+    container_name: vallidator-db
+    image: postgres:13 
+    environment:
+      POSTGRES_DB: vallidatordb 
+      POSTGRES_USER: user 
+      POSTGRES_PASSWORD: passwd 
+    volumes:
+      - ./data:/var/lib/postgresql/data # Volume para persistência de dados
+
+  # Ferramenta de Administração do PostgreSQL (Opcional)
+  pgadmin:
+    container_name: my-pgadmin
+    image: dpage/pgadmin4
+    command: ["tail", "-f", "/dev/null"]
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@vallidator.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin

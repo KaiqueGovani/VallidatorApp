@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "985039980689",
+    "project_id": "vallidator",
+    "storage_bucket": "vallidator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985039980689:android:f328c07af5a4cb86749730",
+        "android_client_info": {
+          "package_name": "br.com.vallidator.vallidator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlqZYJGq13nqXKj3CUdUL1Latru81NyUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

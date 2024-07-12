@@ -1,0 +1,294 @@
+###
+GET http://localhost:3000/templates/listar
+###
+GET http://localhost:3000/templates/buscar?busca=E
+###
+GET http://localhost:3000/templates
+###
+POST http://localhost:3000/templates/criar
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY5Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY5Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+    "nome": "ExemploTemplate1",
+    "extensao": "csv",
+    "status": true,
+    "campos": [
+      {
+        "nome_campo": "Campo1",
+        "id_tipo": 1,
+        "anulavel": false
+      },
+      {
+        "nome_campo": "Campo2",
+        "id_tipo": 1,
+        "anulavel": false
+      },
+      {
+        "nome_campo": "Campo3",
+        "id_tipo": 1,
+        "anulavel": false
+      },
+      {
+        "nome_campo": "Campo4",
+        "id_tipo": 1,
+        "anulavel": false
+      }
+    ]
+}
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY5Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+  "nome": "Clientes",
+  "extensao": "csv",
+  "status": true,
+  "campos": [
+    {
+      "nome_campo": "Nome",
+      "id_tipo": 1,
+      "anulavel": false
+    },
+    {
+      "nome_campo": "CPF",
+      "id_tipo": 2,
+      "anulavel": false
+    },
+    {
+      "nome_campo": "Endereço",
+      "id_tipo": 3,
+      "anulavel": false
+    },
+    {
+      "nome_campo": "Telefone",
+      "id_tipo": 4,
+      "anulavel": false
+    }
+  ]
+}
+
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY5Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+"nome": "TodoList",
+"extensao": "xlsx",
+"status": false,
+"campos": [
+{
+"nome_campo": "Tarefa",
+"id_tipo": 1,
+"anulavel": false
+},
+{
+"nome_campo": "Data de conclusão",
+"id_tipo": 2,
+"anulavel": false
+},
+{
+"nome_campo": "Prioridade",
+"id_tipo": 3,
+"anulavel": false
+}
+]
+}  
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY5Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+"nome": "Móveis",
+"extensao": "csv",
+"status": true,
+"campos": [
+{
+"nome_campo": "Nome",
+"id_tipo": 1,
+"anulavel": false
+},
+{
+"nome_campo": "Cor",
+"id_tipo": 2,
+"anulavel": false
+},
+{
+"nome_campo": "Material",
+"id_tipo": 3,
+"anulavel": false
+},
+{
+"nome_campo": "Dimensões",
+"id_tipo": 4,
+"anulavel": false
+}
+]
+} 
+
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY5Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+    "nome": "Produtos",
+    "extensao": "csv",
+    "status": true,
+    "campos": [
+        {
+            "nome_campo": "Descrição",
+            "id_tipo": 1,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Quantidade",
+            "id_tipo": 2,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Preço",
+            "id_tipo": 3,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Disponível",
+            "id_tipo": 5,
+            "anulavel": false
+        }
+    ]
+}
+
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY9Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+    "nome": "Funcionários",
+    "extensao": "xlsx",
+    "status": false,
+    "campos": [
+        {
+            "nome_campo": "Nome Completo",
+            "id_tipo": 1,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Registro",
+            "id_tipo": 2,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Data de Admissão",
+            "id_tipo": 4,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Salário",
+            "id_tipo": 3,
+            "anulavel": false
+        }
+    ]
+}
+
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY5Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+    "nome": "Vendas",
+    "extensao": "csv",
+    "status": true,
+    "campos": [
+        {
+            "nome_campo": "ID Venda",
+            "id_tipo": 2,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Valor Total",
+            "id_tipo": 3,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Data da Venda",
+            "id_tipo": 4,
+            "anulavel": false
+        }
+    ]
+}
+
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY9Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+    "nome": "Controle de Acesso",
+    "extensao": "xlsx",
+    "status": false,
+    "campos": [
+        {
+            "nome_campo": "Usuario",
+            "id_tipo": 1,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Horário de Entrada",
+            "id_tipo": 4,
+            "anulavel": true
+        },
+        {
+            "nome_campo": "Horário de Saída",
+            "id_tipo": 4,
+            "anulavel": true
+        },
+        {
+            "nome_campo": "Setor",
+            "id_tipo": 1,
+            "anulavel": false
+        }
+    ]
+}
+
+###
+POST http://localhost:3000/templates/criar
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicGVybWlzc2FvIjoiYWRtaW4iLCJpYXQiOjE2OTY3NDYyMDMsImV4cCI6MTY9Njc0OTgwM30.4I9430bViFdFMXsCo2ZO89Hya_SCh_EER_xhTjCXXf8
+
+{
+    "nome": "Eventos",
+    "extensao": "csv",
+    "status": true,
+    "campos": [
+        {
+            "nome_campo": "Evento",
+            "id_tipo": 1,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Data",
+            "id_tipo": 4,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Local",
+            "id_tipo": 1,
+            "anulavel": false
+        },
+        {
+            "nome_campo": "Participantes Confirmados",
+            "id_tipo": 2,
+            "anulavel": true
+        }
+    ]
+}

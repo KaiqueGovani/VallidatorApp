@@ -1,0 +1,37 @@
+body {
+    background-color: var(--BBBlue);
+}
+
+.bg-body {
+    background-color: var(--Primaria) !important;
+}
+
+.vallidator-logo {
+    justify-content: center;
+    align-items: center;
+}
+
+.modal label + input{
+    font-family: Inter;
+}
+
+.modal button {
+    font-family: Inter;
+    height: 40px;
+}
+
+.modal h5 {
+    padding-left: 5px;
+    margin: 10px;
+    color: var(--AtivoVerde);
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 29.169px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.583px;
+}
+
+.btn-close {
+    margin-right: 0px !important;
+}

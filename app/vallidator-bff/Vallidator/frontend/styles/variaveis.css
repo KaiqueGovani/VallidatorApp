@@ -1,0 +1,273 @@
+:root {
+    --Primaria: #8AF496;
+    --Terciaria: #36965E;
+    --BBBlue: #EAFEFD;
+    --Baby-Green: #B4EFCC;
+    --AtivoVerde: #133420;
+    --InativoVerde: #4D9C6E;
+    --VerdeUI: #8EB9A0;
+}
+
+.ff-ubuntu{
+    font-family: Ubuntu;
+    letter-spacing: -0.32px;
+}
+
+.ff-ubuntu-700{
+    font-family: Ubuntu;
+    font-weight: 700;
+    letter-spacing: -0.32px;
+}
+
+.color-AtivoVerde{
+    color: var(--AtivoVerde);
+}
+
+.vallidator {
+    font-family: Koulen;
+    color: var(--AtivoVerde);
+    font-weight: 400;
+    word-wrap: break-word
+}
+
+.vallidator-logo{
+    padding-left: 1.5rem!important;
+}
+
+.navbar {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link {
+    text-align: center;
+    color: var(--InativoVerde);
+    font-size: 24px;
+    font-family: Ubuntu;
+    font-weight: 700;
+    line-height: 43.50px;
+    word-wrap: break-word;
+    padding-left: 1.5rem!important;
+    padding-right: 1.5rem!important;
+}
+
+.page-title {
+    width: auto;
+    text-align: center;
+    color: var(--AtivoVerde);
+    font-size: 36px;
+    font-family: Ubuntu;
+    font-weight: 700;
+    letter-spacing: -0.72px;
+}
+
+.form-control:focus{
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--VerdeUI);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--Baby-Green);
+}
+
+.btn-primary{
+    --bs-btn-bg: #36965E;
+    --bs-btn-border-color: #36965E;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #215f3b;
+    --bs-btn-hover-border-color: #1f5435;
+    --bs-btn-active-bg: #163623;
+    --bs-btn-active-border-color: #163623;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--AtivoVerde);
+    --bs-btn-border-color: var(--VerdeUI);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--VerdeUI);
+    --bs-btn-hover-border-color: var(--Terciaria);
+    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-active-color: var(--AtivoVerde);
+    --bs-btn-active-bg: var(--Baby-Green);
+    --bs-btn-active-border-color: var(--Terciaria);
+}
+
+.btn-secondary{
+    --bs-btn-bg:  rgba(180, 239, 204, 0.27);
+    --bs-btn-border-color: var(--InativoVerde);
+    --bs-btn-hover-color: rgba(0, 0, 0, 0.705);
+    --bs-btn-hover-bg: rgba(93, 181, 129, 0.27);
+    --bs-btn-hover-border-color: var(--InativoVerde);
+    --bs-btn-active-color: rgba(0, 0, 0, 0.705);;
+    --bs-btn-active-bg: #99d1b0;
+    --bs-btn-active-border-color: var(--InativoVerde);
+    color: rgba(0, 0, 0, 0.60);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: -0.32px;
+}
+
+.btn-light {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    --bs-btn-bg: #f5f5f5;
+    color: #545F71;
+}
+
+@media (max-width: 1399.5px){
+    .card-body .card-text{
+        max-width: 245px !important;
+    }
+}
+
+@media (max-width: 1200px){
+    .coluna-responsiva{
+        flex-direction: column;
+    }
+    .card-body {
+        flex-direction: column;
+    }
+    .card-options {
+        flex-direction: column;
+    }
+    .card-options .form-check {
+        width: fit-content;
+        justify-self: center;
+        margin: auto;
+        padding-left: 0px;
+    }
+    .card-body .card-text{
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width:580px){
+    .card-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 400px){
+    .vallidator-logo{
+        padding-left: 0.5rem!important;
+        width: 75%;
+    }
+}
+
+.card-header .btn{
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 110%; 
+}
+
+.card {
+    font-family: 'Noto Sans Thai';
+    border: 1px solid var(--InativoVerde);
+    margin-bottom: 50px;
+}
+
+.card-header{
+    color: var(--AtivoVerde);
+    border: 1px solid var(--InativoVerde);
+    background: var(--Baby-Green, #B4EFCC);
+}
+
+.card-body{
+    border: 1px solid var(--InativoVerde);
+    background: #FFF;
+}
+
+.card-body .card-text{
+    max-width: 475px;
+}
+
+.btn img {
+    width: 28px;
+}
+
+.btn-close {
+    height: 16px !important;
+}
+
+#feedbackModalIcon *{
+    height: 106px;
+    width: 106px;
+    margin: 16px;
+}
+
+.card-body .btn{
+   padding-top: 12px;
+   padding-bottom: 12px;
+   padding-left: 16px;
+   padding-right: 16px;
+   gap: 10px;
+   align-items: center;
+}
+
+.card-title{
+    font-weight: 600;
+}
+
+.card-footer{
+    text-align: end;
+    align-items: center;
+    justify-items: end;
+    justify-content: end;
+    border: 1px solid var(--InativoVerde);
+    background: var(--Baby-Green);
+}
+
+.pagination{
+    --bs-pagination-color: rgb(0 0 0 / 70%);
+    --bs-pagination-bg: #fff;
+    --bs-pagination-hover-color: #26c252;
+    --bs-pagination-focus-color: #19c43e;
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(1, 113, 19, 0.25);
+    --bs-pagination-active-color: #fff;
+    --bs-pagination-active-bg: #64d468;
+    --bs-pagination-active-border-color: #243e2c56;
+}
+
+.form-check-input {
+    float: none !important;
+    margin-left: 8px !important;
+    width: 1.3em; 
+    height:1.3em;
+}
+
+.form-check-input:checked {
+    background-color: var(--Terciaria) !important;
+    border-color: var(--InativoVerde) !important;
+}
+
+.form-check-input:focus{
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--VerdeUI);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--Baby-Green);
+}
+
+.form-switch{
+    padding-left: 0;
+}
+
+.form-switch .form-check-input:focus{
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%238EB9A0'/%3e%3c/svg%3e");
+}
+
+.form-switch .form-check-input {
+    width: 2.3em;
+}
+
+.table-responsive *{
+    font-family: Inter;
+    text-align: center;
+}
+
+.toast-body {
+    color: white;
+}
